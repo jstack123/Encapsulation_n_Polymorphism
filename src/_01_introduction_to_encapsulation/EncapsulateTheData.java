@@ -20,11 +20,11 @@ import org.junit.Test;
 public class EncapsulateTheData {
 	// 1. Encapsulate the member variables.
 	// Add restrictions to the setters according to the comment.
-	
+
 	public static void main(String[] args) {
-		
+
 	}
-	
+
 	// 2. Create a new JUnit Test case and write tests to verify that
 	// the member variables' getters and setters are working
 
@@ -32,7 +32,6 @@ public class EncapsulateTheData {
 	private float degreesTurned; // must be locked between 0.0 and 360.0 inclusive.
 	private String nomenclature = " "; // must not be set to a blank string. Blank Strings get set to a space
 	private Object memberObj; // can be any object type except String. Strings get turned into objects.
-	
 
 	public int getItemsRecieved() {
 		return itemsRecieved;
@@ -58,27 +57,28 @@ public class EncapsulateTheData {
 		}
 		degreesTurned = dt;
 	}
-	
-	public void setNomenclature(String n) {
-		if (n.equals("")) {
-			n.equals(" ");
-		}
-		nomenclature = n;
-	}
-	
+
 	public String getNomenclature() {
 		return nomenclature;
 	}
 
+	public void setNomenclature(String n) {
+		if (n.equals("")) {
+			n = " ";
+		}
+		nomenclature = n;
+	}
+
 	public Object getMemberObj() {
 		return memberObj;
-	} 
-	
-	public void setNomenclature(Object o) {
-		if (o.equals("")) {
-			
+	}
+
+	public void setMemberObj(Object o) {
+
+		if (o instanceof String) {
+			memberObj = o;
 		}
 		memberObj = o;
 	}
-	
+
 }

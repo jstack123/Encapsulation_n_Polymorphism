@@ -1,7 +1,10 @@
 package _01_introduction_to_encapsulation;
 
-import static org.junit.Assert.assertEquals;
+
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
@@ -28,5 +31,20 @@ public class EncapsulationTest {
 		ed.setDegreesTurned(-30);
 		assertEquals(0,ed.getDegreesTurned());
 	}
+	
+	@Test 
+	public void testNomenclature() {
+		
+		ed.setNomenclature("");
+		assertEquals(" ", ed.getNomenclature());
+	}
+	
+	@Test
+	public void testMemberObj() {
+		
+		ed.setMemberObj("");
+		assertTrue(ed.getMemberObj() instanceof Object);
+	}
 
 }
+
