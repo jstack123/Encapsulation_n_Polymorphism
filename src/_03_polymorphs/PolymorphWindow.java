@@ -10,46 +10,54 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class PolymorphWindow extends JPanel implements ActionListener{
-    public static final int WIDTH = 900;
-    public static final int HEIGHT = 600;
-    
-    private JFrame window;
-    private Timer timer;
-    
-    Polymorph bluePoly;
-    
-    public static void main(String[] args) {
-   	 new PolymorphWindow().buildWindow();
-    }
-    
-    public void buildWindow(){
-   	 window = new JFrame("IT'S MORPHIN' TIME!");
-   	 window.add(this);
-   	 window.getContentPane().setPreferredSize(new Dimension(500, 500));
-   	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-   	 window.pack();
-   	 window.setVisible(true);
-   	 
-   	 bluePoly = new BluePolymorph(50, 50);
-   	 
-   	 timer = new Timer(1000 / 30, this);
-   	 timer.start();
-    }
-    
-    public void paintComponent(Graphics g){
-    //draw background
-   	 g.setColor(Color.LIGHT_GRAY);
-   	 g.fillRect(0, 0, 500, 500);
-   	
-   	 //draw polymorph
-   	 bluePoly.draw(g);
-    }
+public class PolymorphWindow extends JPanel implements ActionListener {
+	public static final int WIDTH = 900;
+	public static final int HEIGHT = 600;
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-   	 repaint();
-   	 bluePoly.update();
-   	 
-    }
+	private JFrame window;
+	private Timer timer;
+
+	Polymorph bluePoly;
+	Polymorph redMorph;
+	Polymorph movingMorph;
+
+	public static void main(String[] args) {
+		new PolymorphWindow().buildWindow();
+	}
+
+	public void buildWindow() {
+		window = new JFrame("IT'S MORPHIN' TIME!");
+		window.add(this);
+		window.getContentPane().setPreferredSize(new Dimension(500, 500));
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.pack();
+		window.setVisible(true);
+
+		bluePoly = new BluePolymorph(300, 300, 100, 100);
+		redMorph = new RedMorph(200, 200, 100, 100);
+		movingMorph = new MovingMorph(40,40,140,150);
+
+		timer = new Timer(1000 / 30, this);
+		timer.start();
+	}
+
+	public void paintComponent(Graphics g) {
+		// draw background
+		g.setColor(Color.LIGHT_GRAY);
+		g.fillRect(0, 0, 500, 500);
+
+		// draw polymorph
+		bluePoly.draw(g);
+		redMorph.draw(g);
+		movingMorph.draw(g);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		repaint();
+		bluePoly.update();
+		redMorph.update();
+		movingMorph.update();
+		
+	}
 }
