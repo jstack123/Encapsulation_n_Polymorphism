@@ -20,16 +20,16 @@ public abstract class Polymorph {
 		return x;
 	}
 
-	public void setX(int xvar) {
-		x = xvar;
+	public void setX(double xvar) {
+		x = (int) xvar;
 	}
 
 	public int getY() {
 		return y;
 	}
 
-	public void setY(int yvar) {
-		y = yvar;
+	public void setY(double yvar) {
+		y = (int) yvar;
 	}
 	
 	public int getWidth() {

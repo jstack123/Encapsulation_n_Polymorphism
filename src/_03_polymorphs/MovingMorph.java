@@ -32,6 +32,11 @@ public class MovingMorph extends Polymorph{
 			setY(getY()-5);
 		}
 		
+	
+		if (getY() < 20) {
+			setY(getY()+5);
+		}
+		
 		
 		
 		
