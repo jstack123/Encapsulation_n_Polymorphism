@@ -18,10 +18,13 @@ public class PolymorphWindow extends JPanel implements ActionListener {
 	private JFrame window;
 	private Timer timer;
 	
-	Polymorph blueMorph = new BluePolymorph(30, 30, 300, 300);
-	Polymorph movingMorph = new MovingMorph(30,30,140,140);
-	Polymorph circleMorph = new CircleMorph(30,30,50,50);
-	Polymorph redMorph = new RedMorph(30,30,400,400);
+	Polymorph blueMorph = new BluePolymorph(20, 20, 30, 30);
+	Polymorph movingMorph = new MovingMorph(140,140,30,30);
+	Polymorph redMorph = new RedMorph(400,400,30,30);
+	Polymorph circleMorph = new CircleMorph(350,350,30,30);
+	Polymorph mouseMorph = new MouseMorph(100,100,30,30);
+	Polymorph imageMorph = new ImageMorph(200,200,100,100);
+	Polymorph messageMorph = new MessageMorph(75,75,40,40);
 
 	ArrayList<Polymorph> polymorphs = new ArrayList<Polymorph>();
 		
@@ -39,11 +42,17 @@ public class PolymorphWindow extends JPanel implements ActionListener {
 		window.pack();
 		window.setVisible(true);
 
+		window.addMouseMotionListener((MouseMorph)mouseMorph);
+		window.addMouseListener((MessageMorph)messageMorph);
+		
 		polymorphs.add(blueMorph);
 		polymorphs.add(movingMorph);
-		polymorphs.add(circleMorph);
 		polymorphs.add(redMorph);
-
+		polymorphs.add(circleMorph);
+		polymorphs.add(mouseMorph);
+		polymorphs.add(imageMorph);
+		polymorphs.add(messageMorph);
+		
 
 		timer = new Timer(1000 / 30, this);
 		timer.start();
