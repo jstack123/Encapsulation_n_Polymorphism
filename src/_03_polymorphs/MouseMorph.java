@@ -30,8 +30,8 @@ public class MouseMorph extends Polymorph implements MouseMotionListener {
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
-		setX(e.getX());
-		setY(e.getY());
+		setX(e.getX()-15);
+		setY(e.getY()-15);
 	}
 	
 }

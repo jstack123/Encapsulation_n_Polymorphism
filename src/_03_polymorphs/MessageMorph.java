@@ -36,7 +36,7 @@ public class MessageMorph extends Polymorph implements MouseListener {
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
-		if (getX()>75 && getX()<115 || getY()>75 && getX()<115) {
+		if (e.getX()>75 && e.getX()<115 && e.getY()>75 && e.getY()<115) {
 			JOptionPane.showMessageDialog(null, "The polymorph has been clicked.");
 		}
 	}
