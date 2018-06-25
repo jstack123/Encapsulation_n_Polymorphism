@@ -2,7 +2,7 @@ package _04_hospital;
 
 public class Patient {
 
-	boolean feelsCaredFor = false;
+	 boolean feelsCaredFor = false;
 	public boolean feelsCaredFor() {
 
 		if (feelsCaredFor==true) {

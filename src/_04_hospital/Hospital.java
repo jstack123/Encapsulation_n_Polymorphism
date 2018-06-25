@@ -27,5 +27,23 @@ public class Hospital {
 	public ArrayList<Patient> getPatients() {
 		return patients;
 	}
+	
+	public void assignPatientsToDoctors() throws Exception {
+	//	addDoctor(new GeneralPractitioner());
+	//	addDoctor(new Surgeon());
+	//	addDoctor(new Surgeon());
+	//		addPatient(new Patient());
+		
+		
+		doctors.get(0).assignPatient(patients.get(0));
+		doctors.get(0).assignPatient(patients.get(1));
+		doctors.get(0).assignPatient(patients.get(2));
+		doctors.get(1).assignPatient(patients.get(3));
+		doctors.get(1).assignPatient(patients.get(4));
+		doctors.get(1).assignPatient(patients.get(5));
+		doctors.get(2).assignPatient(patients.get(6));
+		doctors.get(2).assignPatient(patients.get(7));
+		
+	}
 
 }

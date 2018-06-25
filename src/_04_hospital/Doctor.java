@@ -14,16 +14,24 @@ public class Doctor {
 		return false;
 	}
 
-	public void assignPatient(Patient patient) {
-		patientsForDoctors.add(patient);
+	public void assignPatient(Patient patient) throws Exception {
+
+		if (patientsForDoctors.size() < 4) {
+			patientsForDoctors.add(patient);
+		} else {
+			throw new DoctorFullException();
+		}
 	}
 
 	public ArrayList<Patient> getPatients() {
 		return patientsForDoctors;
 	}
-	
+
 	public void doMedicine() {
-		//Patient.feelsCaredFor=true;
+		for (int i = 0; i < patientsForDoctors.size(); i++) {
+			patientsForDoctors.get(i).checkPulse();
+		}
+
 	}
 
 }
