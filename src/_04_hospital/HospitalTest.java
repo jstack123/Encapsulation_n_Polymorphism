@@ -1,9 +1,5 @@
 package _04_hospital;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
 
 import junit.framework.TestCase;

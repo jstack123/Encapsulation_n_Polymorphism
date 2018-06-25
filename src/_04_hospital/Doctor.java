@@ -16,7 +16,7 @@ public class Doctor {
 
 	public void assignPatient(Patient patient) throws Exception {
 
-		if (patientsForDoctors.size() < 4) {
+		if (patientsForDoctors.size() < 3) {
 			patientsForDoctors.add(patient);
 		} else {
 			throw new DoctorFullException();
